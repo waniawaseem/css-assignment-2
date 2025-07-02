@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff6ef;
+  color: #1a1a1a;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff6ef;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 25px;
+}
+
+.logo .highlight {
+  color: #ff6f4d;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff6f4d;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease;
+}
+
+.left {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.shoe {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: rotate(-15deg);
+  transition: transform 0.4s ease;
+}
+
+.shoe:hover {
+  transform: rotate(-15deg) scale(1.05);
+}
+
+.right {
+  max-width: 400px;
+}
+
+.text-orange {
+  color: #ff6f4d;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-dark {
+  color: #2e2e5e;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.right p {
+  margin: 20px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.btn {
+  background: #3d50ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #2c38c9;
+  transform: scale(1.05);
+}
+
+/* Animations */
+.fade-in-left {
+  animation: fadeInLeft 1s ease;
+}
+.fade-in-right {
+  animation: fadeInRight 1s ease;
+}
+
+@keyframes fadeInLeft {
+  from {opacity: 0; transform: translateX(-50px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInRight {
+  from {opacity: 0; transform: translateX(50px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .left {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+  .text-orange {
+    font-size: 28px;
+  }
+
+  .text-dark {
+    font-size: 32px;
+  }
+}
